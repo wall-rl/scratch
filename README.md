@@ -65,6 +65,7 @@ the branch to compare 'main' is the default branch
 5) back to the browser!
 
 - installed scratch ==>
-
+![Screenshot 2024-01-31 at 7 44 09 AM](https://github.com/wall-rl/scratch/assets/151564827/e0a8eb5e-05e7-4f61-876b-cc96a26404e5)
 
 - fireworks on dashboard for URL: https://docs.runloop.ai/lab?installation_id=46770048&setup_action=update
+![Screenshot 2024-01-31 at 7 44 24 AM](https://github.com/wall-rl/scratch/assets/151564827/87b3d65d-c247-4b1c-9bf7-e73c9395b795)
