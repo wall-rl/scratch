@@ -22,4 +22,18 @@ Installing collected packages: runloop
 Successfully installed runloop-0.0.4
 (scratch) ➜  scratch (main) pip freeze > requirements.txt
 
-3) create echo
+3) create echo (following step 3 of docs)
+
+(scratch) ➜  scratch (main) pbpaste > echo.py                                                                                       ✭ ✱
+(scratch) ➜  scratch (main) cat echo.py                                                                                             ✭ ✱
+import runloop
+
+@runloop.loop
+def echo(metadata: dict[str, str], greeting: list[str]) -> tuple[list[str], dict[str, str]]:
+    return [f"hello runloop! {greeting[0]}"], metadata
+(scratch) ➜  scratch (main) pbpaste > runloop.toml                                                                                  ✭ ✱
+(scratch) ➜  scratch (main) cat runloop.toml                                                                                        ✭ ✱
+[module]
+path = "."
+name = "echo"
+(scratch) ➜  scratch (main)            
