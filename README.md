@@ -1,12 +1,12 @@
 step by step command line of what I did in new / empty repo.
 
 1) create venv
-
+```
 ➜  scratch (main) python3.10 -m venv ~/.venv/scratch --upgrade-deps
 ➜  scratch (main) source ~/.venv/scratch/bin/activate
-
+```
 2) setup requirements (my version of step 1 of docs)
-
+```
 (scratch) ➜  scratch (main) pip install runloop                                                                                       ✱
 Collecting runloop
   Downloading runloop-0.0.4.tar.gz (3.9 kB)
@@ -21,9 +21,9 @@ Successfully built runloop
 Installing collected packages: runloop
 Successfully installed runloop-0.0.4
 (scratch) ➜  scratch (main) pip freeze > requirements.txt
-
+```
 3) create echo (following step 3 of docs)
-
+```
 (scratch) ➜  scratch (main) pbpaste > echo.py                                                                                       ✭ ✱
 (scratch) ➜  scratch (main) cat echo.py                                                                                             ✭ ✱
 import runloop
@@ -37,9 +37,9 @@ def echo(metadata: dict[str, str], greeting: list[str]) -> tuple[list[str], dict
 path = "."
 name = "echo"
 (scratch) ➜  scratch (main)
-
+```
 4) poosh to main
-
+```
 (scratch) ➜  scratch (main) gtcp                                                                                                      ✈
 DO NOT COMMIT TO MAIN!
 (scratch) ➜  scratch (main) git commit -am "jsut do it"                                                                               ✈
@@ -61,7 +61,7 @@ remote: Resolving deltas: 100% (1/1), done.
 To github.com:wall-rl/scratch.git
    5bcc8e8..4972945  HEAD -> main
 the branch to compare 'main' is the default branch
-
+```
 5) back to the browser!
 
 - installed scratch ==>
@@ -69,3 +69,19 @@ the branch to compare 'main' is the default branch
 
 - fireworks on dashboard for URL: https://docs.runloop.ai/lab?installation_id=46770048&setup_action=update
 ![Screenshot 2024-01-31 at 7 44 24 AM](https://github.com/wall-rl/scratch/assets/151564827/87b3d65d-c247-4b1c-9bf7-e73c9395b795)
+
+6) in the logs?
+```
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]15:46:41.830 [JettyServerThreadPool-28] INFO  a.r.s.b.c.GithubWebhookRestHandler - handleWebhook event=push hookId=448990357 delivery=ed776c42-c04f-11ee-8b0b-8619b42d55ae
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]15:46:41.835 [JettyServerThreadPool-28] ERROR a.r.s.b.c.p.GithubPushEventController - Error in HandlePushWebhookWorkflow
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]java.util.NoSuchElementException: null
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at com.google.common.collect.AbstractIndexedListIterator.next(AbstractIndexedListIterator.java:80)
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at com.google.common.collect.Iterators.getOnlyElement(Iterators.java:309)
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at com.google.common.collect.Iterables.getOnlyElement(Iterables.java:263)
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at ai.runloop.server.db.model.control.repo.RepoDao.loadByOwnerAndName(RepoDao.java:21)
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at ai.runloop.server.bundler.controllers.push.GithubPushEventController.handle(GithubPushEventController.java:88)
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at ai.runloop.server.bundler.controllers.push.GithubPushEventController.handle(GithubPushEventController.java:30)
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at ai.runloop.server.bundler.controllers.GithubWebhookRestHandler$ContextHandler.executeHandler(GithubWebhookRestHandler.java:79)
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at ai.runloop.server.bundler.controllers.GithubWebhookRestHandler.handle(GithubWebhookRestHandler.java:58)
+2024-01-31T15:46:41Z app[9080e19df507e8] sea [info]	at io.javalin.routing.HandlerEntry.handle(HandlerEntry.kt:19)
+```
