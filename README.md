@@ -22,4 +22,49 @@ Installing collected packages: runloop
 Successfully installed runloop-0.0.4
 (scratch) ➜  scratch (main) pip freeze > requirements.txt
 
-3) create echo
+3) create echo (following step 3 of docs)
+
+(scratch) ➜  scratch (main) pbpaste > echo.py                                                                                       ✭ ✱
+(scratch) ➜  scratch (main) cat echo.py                                                                                             ✭ ✱
+import runloop
+
+@runloop.loop
+def echo(metadata: dict[str, str], greeting: list[str]) -> tuple[list[str], dict[str, str]]:
+    return [f"hello runloop! {greeting[0]}"], metadata
+(scratch) ➜  scratch (main) pbpaste > runloop.toml                                                                                  ✭ ✱
+(scratch) ➜  scratch (main) cat runloop.toml                                                                                        ✭ ✱
+[module]
+path = "."
+name = "echo"
+(scratch) ➜  scratch (main)
+
+4) poosh to main
+
+(scratch) ➜  scratch (main) gtcp                                                                                                      ✈
+DO NOT COMMIT TO MAIN!
+(scratch) ➜  scratch (main) git commit -am "jsut do it"                                                                               ✈
+[main 4972945] jsut do it
+ 6 files changed, 74 insertions(+), 1 deletion(-)
+ create mode 100644 #README.md#
+ create mode 120000 .#README.md
+ create mode 100644 echo.py
+ create mode 100644 requirements.txt
+ create mode 100644 runloop.toml
+(scratch) ➜  scratch (main) adb
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (8/8), 1.52 KiB | 1.52 MiB/s, done.
+Total 8 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:wall-rl/scratch.git
+   5bcc8e8..4972945  HEAD -> main
+the branch to compare 'main' is the default branch
+
+5) back to the browser!
+
+- installed scratch ==>
+
+
+- fireworks on dashboard for URL: https://docs.runloop.ai/lab?installation_id=46770048&setup_action=update
